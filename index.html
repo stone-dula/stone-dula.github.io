@@ -42,7 +42,6 @@
       <img src="images/models/image (5).webp">
       <img src="images/models/image (6).webp">
       <img src="images/models/image (8).webp">
-      <img src="images/models/image (4).webp">
       <img src="images/models/image.webp">
       <img src="images/models/unknown (1).webp">
       <img src="images/models/unknown (3).webp">
@@ -86,6 +85,34 @@
   <a href="resume.pdf">Resume</a>
   <a href="mailto:stonedula@email.com">Contact</a>
 </footer>
+  
+<div id="lightbox">
+  <img id="lightbox-img">
+</div>
+  
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  document.querySelectorAll(".grid img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
+    });
+  });
+
+  lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+    lightboxImg.src = "";
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      lightbox.style.display = "none";
+      lightboxImg.src = "";
+    }
+  });
+</script>
 
 </body>
 </html>
